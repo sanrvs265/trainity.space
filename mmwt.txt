@@ -1,0 +1,67 @@
+// Here You can type your custom JavaScript...//weight autosave 100items
+$(document).ready(function() {
+  $("div#tabWeight_length select").val("100").change();
+window.onload = function() {
+  window.confirm = function() {
+    var realConfirm = window.confirm;
+    window.confirm = realConfirm;
+    return true;
+  }
+}(10000);
+  var butEl = document.getElementsByClassName('saveWeight'),
+    count = butEl.length;
+  for (i = 0; i < count; i++) {
+    butEl[i].click(); 
+  }
+  if (document.all !== undefined) {
+   var items = document.all;
+ } else {
+   var items = document.getElementsByTagName("*");
+ };
+ for (var i = 0; i < items.length; ++i) {
+   if (items[i].textContent.includes("Enter Weight")) {
+     console.log("success");
+     items[i].click();
+   }
+ }
+//auto submit to create jobcard no
+$('#save').click();
+//submitDelieveryVoucher code
+if (document.all !== undefined) {
+   var items = document.all;
+ } else {
+   var items = document.getElementsByTagName("*");
+ };
+ for (var i = 0; i < items.length; ++i) {
+   if (items[i].textContent.includes("Delivery Voucher")) {
+     console.log("success");
+     items[i].click();
+   }
+ }
+ if ($("div.text-center:contains('Error Page')").length == 1) {
+    if (confirm("Page is redirecting"))
+        window.location.replace("https://huid.manakonline.in/MANAK/NewArticlesListForWeighing");
+    else
+        alert("Thanks for testing");
+    
+}
+document.querySelector("body > div.bis > section > div > div:nth-child(1) > h4")
+  let textBox = document.querySelector("#finalWeightReturned");
+var defaultTextValue = '';
+n1 = parseFloat(document.querySelector("#divmangmt:nth-child(3) > td:nth-child(2)").innerHTML);
+n2 = parseFloat(document.querySelector("#divmangmt:nth-child(6) > td:nth-child(2)").innerHTML);
+n3 = (n2 / 1000);
+n4 = (n1-n3).toFixed(3);
+textBox.value = (n4);
+});
+
+$('#submitDelieveryVoucher').click();
+//set defaultTextValue
+const defaultTextValue = 'okay';
+let searchBox = document.getElementById('RemarksQM');
+searchBox.value = defaultTextValue;
+searchBox.onfocus = function() {
+  if (this.value == defaultTextValue) {
+    this.value = '';
+  }
+}
